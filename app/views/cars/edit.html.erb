@@ -1,0 +1,16 @@
+<%= form_for(@car) do |f| %>
+  <%= f.label "Название" %>
+  <%= f.text_field :name %>
+  
+  <%= f.label "Номер" %>
+  <%= f.text_field :number %>
+  
+  <br> 
+  <%= f.label "ПТС" %>
+  <%= f.text_field :pts %>
+
+  <%= f.label "Дата ПТС" %>
+  <%= f.date_field :date_pts %>
+
+  <%= f.submit "Редактировать", class: "btn btn-large btn-primary" %>
+<% end %>

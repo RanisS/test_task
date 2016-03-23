@@ -1,0 +1,27 @@
+<h1>All cars</h1>
+<table border="1", align="center", width="100%">
+  <td> # </td>
+  <td> Наименование </td>
+  <td> Гос. номер </td>
+  <td> ПТС </td>
+  <td> Дата ПТС </td>
+  <td colspan="2"> <%= link_to "Новый", new_car_path %>  </td>
+  
+  <% i=1%>
+  <% @cars.each do |car| %>
+    <tr>
+      <td> <%= i %></td>
+      <td> <%= link_to car.name, car %></td>
+      <td> <%= car.number %> </td>
+      <td><%= car.pts %></td>
+      <td><%= car.date_pts %></td>
+      <td> <%= link_to "Редакт.", edit_car_path(car)%>  </td>
+      <td> <%= link_to 'Удалить', car_path(car),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }%>  </td> 
+    </tr>
+   <% i=i+1%> 
+  <% end %>
+</table>
+
+ 
